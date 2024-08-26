@@ -13,4 +13,5 @@
 <p>Обращение к API:</p>
 <li>Проверить зарегистрирован ли такой-то никнейм: http://127.0.0.1:8000/api/?mode=username_exists&query=nickname</li>
 <li>Проверить зарегистрирован ли такой-то email: http://127.0.0.1:8000/api/?mode=email_exists&email=email@email.com</li>
+<li>Создание пользователя: http://127.0.0.1:8000/api/?mode=create_user&username=username&password=12345&email=323</li>
 </ul>
