@@ -100,7 +100,6 @@ class apiController extends Controller
         $response = $this->prepairing_create_user($username, $email, $password);
         $errors = $response['errors'];
         
-        
         if (count($errors) > 0) {
             return response()->json(['status' => false, 'errors' => $errors]);
         }
@@ -112,19 +111,17 @@ class apiController extends Controller
     private function username_exists($query): Object
     { 
         if (is_null($query)) {return $this->unknownMethod();}
-        $userexists = User::where('name', $query) -> first();
-        $status = !is_null($userexists) ? true : false;
-        $message = !is_null($userexists) ? "Данное имя уже занято" : "";
-        return response()->json(['status' => $status, 'message' => $message]); 
+        $userexists = User::whereRaw('name = ?', [$query])->get();
+        $message = count($userexists) > 0 ? "Данное имя уже занято" : "";
+        return response()->json(['status' => count($userexists) > 0, 'message' => $message]); 
     }
 
     private function email_exists($query): Object
     { 
         if (is_null($query)) {return $this->unknownMethod();}
-        $userexists = User::where('email', $query) -> first();
-        $status = !is_null($userexists) ? true : false;
-        $message = !is_null($userexists) ? "Данный email занят другим пользователем" : "";
-        return response()->json(['status' => $status, 'message' => $message]); 
+        $userexists = User::whereRaw('email = ?', [$query])->get();
+        $message = count($userexists) > 0 ? "Данный email занят другим пользователем" : "";
+        return response()->json(['status' => count($userexists) > 0, 'message' => $message]); 
     }
 
 

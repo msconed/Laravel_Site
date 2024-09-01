@@ -1,0 +1,13 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/assets/images/user.jpg": "/assets/images/user.jpg",
+    "/assets/svg/messages_full.svg": "/assets/svg/messages_full.svg",
+    "/assets/svg/user_add.svg": "/assets/svg/user_add.svg",
+    "/assets/svg/user_edit.svg": "/assets/svg/user_edit.svg",
+    "/assets/svg/user_empty.svg": "/assets/svg/user_empty.svg",
+    "/assets/svg/user_full.svg": "/assets/svg/user_full.svg",
+    "/assets/svg/user_full_circle.svg": "/assets/svg/user_full_circle.svg",
+    "/assets/svg/user_remove.svg": "/assets/svg/user_remove.svg",
+    "/assets/svg/user_settings.svg": "/assets/svg/user_settings.svg"
+}
