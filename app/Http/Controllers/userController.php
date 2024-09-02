@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\apiController;
 
 
-class UserController
+class userController
 {
     public function register(Request $request)
     {
@@ -81,6 +81,17 @@ class UserController
         Auth::logout();
         $this->reloadPageJS();
     }
+
+    public static function changeLocale($locale)
+    {
+        session(['language' => $locale]);
+        if (Auth::check())
+        {
+            User::where('id', Auth::user()->id)
+            ->update(['locale' => $locale]);
+        }
+    }
+
 
     private function reloadPageJS(){echo "<script>window.top.location.href = \"/\";</script>";}
 

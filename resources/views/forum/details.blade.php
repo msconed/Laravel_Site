@@ -29,6 +29,10 @@
                                 <p class="topics-creator">Автор: {{ $authorName }}</p>
                                 <p>{{ $arr['text'] }}</p>
                             </div>
+
+                                <!--ToDo - Добавить Replies -->
+
+
                         </div>
                     </div>
             </div>

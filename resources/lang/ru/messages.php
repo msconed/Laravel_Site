@@ -15,7 +15,9 @@ return [
     'nicknameEmail' => 'Никнейм/Почта',
     'password' => 'Пароль',
     'register' => 'Зарегистрироваться',
-    'nickname' => 'никнейм'
+    'nickname' => 'никнейм',
+    'homePage' => 'ГЛАВНАЯ',
+    'switchLanguageTo' => 'EN'
 
 
 ];

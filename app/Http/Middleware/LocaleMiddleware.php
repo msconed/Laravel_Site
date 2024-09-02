@@ -29,7 +29,7 @@ class LocaleMiddleware
             $language = Auth::user()->locale;
             session(['language' => $language]);
         }
-        session(['language' => 'en']);
+
         app()->setLocale(session('language'));
         return $next($request);
     }

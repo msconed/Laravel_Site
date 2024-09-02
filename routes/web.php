@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\htmxController;
 use App\Http\Controllers\MiscController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\userController;
 use App\Http\Controllers\forumController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,13 +19,32 @@ Route::get('/js/app.js', function () {
 })->name('js.js');
 /* ------------------------------------------- */
 
+/******************CHANGE LOCALE*************************** */
+Route::get('/change-locale-to-ru', function () 
+{
+    userController::changeLocale('ru');
+    return redirect('/');
+});
+
+Route::get('/change-locale-to-en', function () 
+{
+    userController::changeLocale('en');
+    return redirect('/');
+});
+/********************************************************** */
+
+
 Route::group(['middleware' => 'setLocale'], function () {
     /* ------------BASE PATHS---------------------- */
     Route::get('/', function () {return view('welcome');});
 
     Route::get('/forum', function () 
     {return view('forum.main', ['arr' => forumController::forumMain()]);})->middleware('customAuth');
+
     /* ------------------------------------------- */
+
+
+
 
     /* ---------------------FORUM PATHS------------ */
     Route::get('/forum/{category_id}/{subCatrgory_id}', [forumController::class, 'showTopics'])->middleware('customAuth');

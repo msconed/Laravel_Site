@@ -15,7 +15,9 @@ return [
     'nicknameEmail' => 'nickname/email',
     'password' => 'password',
     'register' => 'Register',
-    'nickname' => 'nickname'
+    'nickname' => 'nickname',
+    'homePage' => 'HOME',
+    'switchLanguageTo' => 'RU'
 
 
 ];

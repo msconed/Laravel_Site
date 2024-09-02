@@ -5,14 +5,25 @@
             LOGO
             
     </div>
+
+    
     <nav>
         <ul class="nav-links">
             
             <li>
-                @if (Auth::check())
-                    <li ><a href="{{ url('/forum') }}">{{ __('messages.headerForum') }}</a></li>
-                @endif
                 
+                @if (Auth::check())
+                    <li ><a href="{{ url('/') }}">{{ __('messages.homePage') }}</a></li>
+                    <li ><a href="{{ url('/forum') }}">{{ __('messages.headerForum') }}</a></li>
+            
+                @endif
+                    @if (session('language') == 'ru')
+                        <li ><a href="{{ url('/change-locale-to-en') }}">EN</a></li>
+                    @else
+                        <li ><a href="{{ url('/change-locale-to-ru') }}">RU</a></li>
+                    @endif
+                    
+
                 <div class="action">
                     <div class="profile" _="on click toggle .active on #proflie-menu" id="profile-icon">
                         <img src="/assets/images/user.jpg" /><a href="#">{{ __('messages.Profile') }}</a>
